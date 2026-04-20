@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeadsUp4CEOs | Leading with Purpose in a Changing System</title>
+  <meta name="description" content="A two-day residential for Trust CEOs and senior leaders. 6–7 July 2026. Harris Institute, Beckenham.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-dark: #34499A;
+      --navy-mid: #454699;
+      --purple-nav: #494C9D;
+      --sky-blue: #54B5E8;
+      --teal-light: #5DE0E6;
+      --yellow: #FDDD5C;
+      --coral: #FE7D51;
+      --white: #FFFFFF;
+      --off-white: #F5F7FA;
+      --light-grey: #E8EDF3;
+      --dark-text: #2D3142;
+      --font-header: 'Lora', Georgia, serif;
+      --font-body: 'Inter', Calibri, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--dark-text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(52, 73, 154, 0.97);
+      backdrop-filter: blur(8px);
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    nav .brand img {
+      height: 36px;
+      width: auto;
+    }
+    nav .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    nav .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--yellow); }
+    nav .nav-cta {
+      background: var(--yellow);
+      color: var(--navy-dark) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    nav .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(253, 221, 92, 0.4);
+      color: var(--navy-dark) !important;
+    }
+    .hamburger { display: none; cursor: pointer; }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white); margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--purple-nav) 100%);
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(84, 181, 232, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(253, 221, 92, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--sky-blue);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-header);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-details {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--white);
+      font-size: 1rem;
+    }
+    .hero-detail .icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .hero-detail .icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--navy-dark);
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253, 221, 92, 0.4);
+    }
+    .yellow-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--yellow);
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1060px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sky-blue);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-header);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .section-intro {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ── CONTEXT SECTION ── */
+    .context { background: var(--off-white); }
+    .context-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .context-text p {
+      margin-bottom: 1rem;
+      line-height: 1.75;
+      color: #444;
+    }
+    .context-text em { color: var(--navy-dark); font-style: italic; }
+    .context-callout {
+      background: var(--white);
+      border-left: 4px solid var(--yellow);
+      padding: 1.75rem;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .context-callout p {
+      font-size: 1.05rem;
+      color: var(--dark-text);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .context-callout p:last-child { margin-bottom: 0; }
+
+    /* ── VENUE IMAGE ── */
+    .venue-banner {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      position: relative;
+    }
+    .venue-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+    }
+    .venue-banner .venue-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(transparent, rgba(45, 49, 66, 0.85));
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+    .venue-banner .venue-caption strong {
+      font-family: var(--font-header);
+      font-size: 1.15rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ── PILLARS ── */
+    .pillars { background: var(--white); }
+    .pillar-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .pillar-card {
+      background: var(--off-white);
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+    }
+    .pillar-card:nth-child(1)::before { background: var(--sky-blue); }
+    .pillar-card:nth-child(2)::before { background: var(--yellow); }
+    .pillar-card:nth-child(3)::before { background: var(--coral); }
+    .pillar-card h3 {
+      font-family: var(--font-header);
+      font-size: 1.2rem;
+      color: var(--navy-dark);
+      margin-bottom: 1rem;
+    }
+    .pillar-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .pillar-card li {
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .pillar-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .pillar-card:nth-child(1) li::before { background: var(--sky-blue); }
+    .pillar-card:nth-child(2) li::before { background: var(--yellow); }
+    .pillar-card:nth-child(3) li::before { background: var(--coral); }
+
+    /* ── PROGRAMME ── */
+    .programme { background: var(--off-white); }
+    .programme-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .timeline-block {
+      position: relative;
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .timeline-block .phase-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .timeline-block:nth-child(1) .phase-tag {
+      background: rgba(84, 181, 232, 0.15);
+      color: var(--navy-dark);
+    }
+    .timeline-block:nth-child(2) .phase-tag {
+      background: rgba(253, 221, 92, 0.3);
+      color: var(--navy-dark);
+    }
+    .timeline-block:nth-child(3) .phase-tag {
+      background: rgba(254, 125, 81, 0.15);
+      color: var(--navy-dark);
+    }
+    .timeline-block h3 {
+      font-family: var(--font-header);
+      font-size: 1.15rem;
+      color: var(--navy-dark);
+      margin-bottom: 0.75rem;
+    }
+    .timeline-block p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ── LOGISTICS ── */
+    .logistics { background: var(--white); }
+    .logistics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .logistics-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--off-white);
+      border-radius: 10px;
+    }
+    .logistics-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: var(--navy-dark);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--white);
+    }
+    .logistics-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .logistics-item h4 {
+      font-size: 1rem;
+      color: var(--navy-dark);
+      margin-bottom: 0.3rem;
+    }
+    .logistics-item p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ── TEAM ── */
+    .team { background: var(--off-white); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .team-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .team-card .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.25rem;
+      border: 3px solid var(--light-grey);
+    }
+    .team-card h3 {
+      font-family: var(--font-header);
+      font-size: 1.15rem;
+      color: var(--navy-dark);
+      margin-bottom: 0.25rem;
+    }
+    .team-card .role {
+      font-size: 0.85rem;
+      color: var(--sky-blue);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .team-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+    .about-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-text p {
+      margin-bottom: 1rem;
+      line-height: 1.75;
+      color: #444;
+    }
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .stat-block {
+      background: var(--off-white);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .stat-block .number {
+      font-family: var(--font-header);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+    }
+    .stat-block .label {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--purple-nav) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-header);
+      font-size: 2rem;
+      color: var(--yellow);
+      margin-bottom: 0.75rem;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-banner a {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--navy-dark);
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-banner a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253, 221, 92, 0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-text);
+      padding: 2rem;
+      text-align: center;
+    }
+    footer p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+    }
+    footer a {
+      color: var(--sky-blue);
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.4rem; }
+      .pillar-cards, .programme-timeline, .team-grid { grid-template-columns: 1fr; }
+      .context-grid, .about-content, .logistics-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-details { gap: 1.5rem; }
+    }
+    @media (max-width: 640px) {
+      nav .nav-links { display: none; }
+      nav .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0;
+        width: 100%;
+        background: var(--navy-dark);
+        padding: 1rem 2rem;
+        gap: 1rem;
+      }
+      .hamburger { display: block; }
+      .hero { padding: 6rem 1.5rem 3.5rem; min-height: auto; }
+      .hero h1 { font-size: 1.9rem; }
+      .hero-subtitle { font-size: 1.05rem; }
+      section { padding: 3rem 1.5rem; }
+      .section-title { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="brand"><img src="logo.png" alt="HeadsUp4HTs"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about-event">The event</a>
+    <a href="#programme">Programme</a>
+    <a href="#team">Facilitators</a>
+    <a href="#about">About</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYz4EfLNqwnQDe_2TAS5ohNlUKRn1itjYJnvWONjz43wtyg/viewform" target="_blank" rel="noopener" class="nav-cta">Register your interest</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="yellow-bar"></div>
+  <div class="hero-content">
+    <span class="hero-label">HeadsUp4CEOs Residential</span>
+    <h1>Leading with Purpose<br>in a Changing System</h1>
+    <p class="hero-subtitle">A two-day residential for Trust CEOs and senior leaders</p>
+    <div class="hero-details">
+      <div class="hero-detail">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div><strong>6&ndash;7 July 2026</strong></div>
+      </div>
+      <div class="hero-detail">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><strong>Beckenham, London</strong></div>
+      </div>
+      <div class="hero-detail">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><strong>Limited places</strong></div>
+      </div>
+    </div>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYz4EfLNqwnQDe_2TAS5ohNlUKRn1itjYJnvWONjz43wtyg/viewform" target="_blank" rel="noopener" class="hero-cta">Register your interest</a>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section class="context" id="about-event">
+  <div class="container">
+    <span class="section-label">Why now</span>
+    <h2 class="section-title">A new landscape for Trust leadership</h2>
+    <div class="context-grid">
+      <div class="context-text">
+        <p>The <em>Every Child Achieving and Thriving</em> white paper sets a new direction for trusts &mdash; with greater expectations around accountability, community collaboration, and standards.</p>
+        <p>For CEOs and senior leaders, this means navigating significant change whilst maintaining the strategic clarity and resilience needed to lead effectively. The pressures are real: Education Support's 2025 Teacher Wellbeing Index recorded its lowest score yet, with 86% of senior leaders reporting high levels of stress.</p>
+        <p>In partnership with the Harris Institute of Teaching and Leadership, this residential brings together a small group of Trust leaders to explore what it means to lead with integrity, openness, and purpose in a rapidly changing landscape &mdash; drawing on the Nolan Principles of public life, and emerging models of civic leadership.</p>
+      </div>
+      <div class="context-callout">
+        <p><strong>A focused residential, not a conference.</strong></p>
+        <p>A carefully facilitated space for honest conversation, strategic reflection, and building peer networks that sustain you in this work. Run on a strictly not-for-profit basis, places are deliberately limited to keep the group intimate and the conversation meaningful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <span class="section-label">What to expect</span>
+    <h2 class="section-title">Three themes across two days</h2>
+    <p class="section-intro">The residential is structured around the strategic questions that matter most to Trust leaders right now.</p>
+    <div class="pillar-cards">
+
+      <div class="pillar-card">
+        <h3>Strategic leadership in a new landscape</h3>
+        <ul>
+          <li>The changing nature of Trust leadership post white paper</li>
+          <li>Leading with integrity, accountability, and openness &mdash; the Nolan Principles in practice</li>
+          <li>Navigating the tension between centralisation and community collaboration</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <h3>Peer learning and honest conversation</h3>
+        <ul>
+          <li>A small, intimate group of Trust CEOs and senior leaders</li>
+          <li>Facilitated discussion, shared challenges, and practical strategies</li>
+          <li>Building peer networks that sustain beyond the residential</li>
+        </ul>
+      </div>
+
+      <div class="pillar-card">
+        <h3>Building capacity and resilience</h3>
+        <ul>
+          <li>Developing sustainable approaches to the demands of trust leadership</li>
+          <li>Expert input on capacity planning and organisational resilience</li>
+          <li>Space to reflect, recharge, and plan with purpose</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section class="programme" id="programme">
+  <div class="container">
+    <span class="section-label">The programme</span>
+    <h2 class="section-title">Before, during, and after</h2>
+    <p class="section-intro">The residential is designed as a complete experience, not just two days in a room.</p>
+    <div class="programme-timeline">
+
+      <div class="timeline-block">
+        <span class="phase-tag">Before the residential</span>
+        <h3>Understanding what you need</h3>
+        <p>You'll have an opportunity to share with the facilitator the leadership challenges you're currently navigating and what would make this time most valuable. This also allows us to thoughtfully pair you with other CEOs facing similar contexts, so that peer discussions are as relevant and useful as possible.</p>
+      </div>
+
+      <div class="timeline-block">
+        <span class="phase-tag">At the residential</span>
+        <h3>Two days of strategic reflection</h3>
+        <p>The residential blends expert input, case studies, facilitated discussion, and practical problem-solving. Day one focuses on sustainable strategic leadership &mdash; context and reflections. Day two turns to strategic foresight and implementation. Throughout, the emphasis is on peer-to-peer learning and building relationships with leaders who understand your context.</p>
+      </div>
+
+      <div class="timeline-block">
+        <span class="phase-tag">After the residential</span>
+        <h3>Sustaining the momentum</h3>
+        <p>The residential is a starting point, not an endpoint. You'll leave with practical resources, but more importantly with connections to other CEOs working through similar challenges. We'll help establish ongoing peer networks based on the relationships formed during the two days &mdash; creating continuing spaces for support, problem-solving, and accountability.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOGISTICS -->
+<section class="logistics">
+  <div class="container">
+    <span class="section-label">Practicalities</span>
+    <h2 class="section-title">Event details</h2>
+    <div class="logistics-grid">
+
+      <div class="logistics-item">
+        <div class="logistics-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>
+          <h4>Dates</h4>
+          <p>Monday 6 &ndash; Tuesday 7 July 2026, with an overnight stay onsite.</p>
+        </div>
+      </div>
+
+      <div class="logistics-item">
+        <div class="logistics-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div>
+          <h4>Venue</h4>
+          <p>Harris Institute of Teaching and Leadership, Beckenham, London: a purpose-built training facility.</p>
+        </div>
+      </div>
+
+      <div class="logistics-item">
+        <div class="logistics-icon"><span style="font-size:1.4rem;color:white;font-weight:700;font-family:Georgia,serif;">&pound;</span></div>
+        <div>
+          <h4>Cost</h4>
+          <p>&pound;445 per participant. The residential is run on a not-for-profit basis: costs cover the venue, accommodation and all meals.</p>
+        </div>
+      </div>
+
+      <div class="logistics-item">
+        <div class="logistics-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <h4>Who is this for?</h4>
+          <p>Trust CEOs and senior executive leaders. Places are limited to keep the group small, the conversation honest, and the experience genuinely valuable.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <span class="section-label">Your facilitators</span>
+    <h2 class="section-title">A team who have supported over 5,500 leaders</h2>
+    <p class="section-intro">All facilitation is designed to maximise peer connections and shared problem solving.</p>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img src="james-pope.jpg" alt="James Pope" class="photo">
+        <h3>James Pope</h3>
+        <div class="role">Founder, HeadsUp4HTs &amp; InspirEducate</div>
+        <p>James has worked in education for over 20 years. After stepping back from headship, he founded the HeadsUp4HTs network, which has grown into a community of thousands of school leaders. He works internationally as a coach, mentor, and thought leader on sustainable leadership and wellbeing.</p>
+      </div>
+
+      <div class="team-card">
+        <img src="kate-smith.jpg" alt="Kate Smith" class="photo">
+        <h3>Kate Smith</h3>
+        <div class="role">Co-lead, HeadsUp4HTs &amp; ICF Accredited Coach</div>
+        <p>Kate is a former primary headteacher with 15 years in education, now an ethical education consultant and ICF accredited coach. As UK Network Leader for HeadsUp4HTs, she has supported thousands of school leaders through values-driven coaching, facilitation, and peer support.</p>
+      </div>
+
+      <div class="team-card">
+        <img src="gene-payne.jpg" alt="Gene Payne" class="photo">
+        <h3>Gene Payne</h3>
+        <div class="role">Regional Principal, Harris Institute of Teaching and Leadership</div>
+        <p>Gene has over 35 years in education, including four years as a headteacher in East Sussex. He was a founding member of the DfE Teacher Research Panel and the first Assistant Director for Applied Research at the National College for School Leadership. Educated at Southampton, Oxford, and Cambridge, Gene brings deep expertise in networking, collaboration, and leadership development.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <span class="section-label">About</span>
+    <h2 class="section-title">About HeadsUp4HTs</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Founded by James Pope and co-led with Kate Smith, HeadsUp4HTs champions the role of headship and provides sustainable emotional and professional support to school leaders across the UK. Through coaching, peer support, crisis response, and national campaigning, HeadsUp4HTs has become a trusted voice in the conversation about leadership wellbeing.</p>
+        <p><strong>HeadsUp4CEOs</strong> extends this model to Trust executive leaders &mdash; applying the same principles of intentional, sustainable, and authentic support to the distinct challenges faced by those leading groups of schools.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-block">
+          <div class="number">5,000+</div>
+          <div class="label">Leaders in the network</div>
+        </div>
+        <div class="stat-block">
+          <div class="number">84%</div>
+          <div class="label">Reported an uplift in wellbeing</div>
+        </div>
+        <div class="stat-block">
+          <div class="number">100%</div>
+          <div class="label">Would recommend the programme</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="register">
+  <h2>Interested? Register your place.</h2>
+  <p>Places are limited. Register to participate as part of our limited cohort for the London event.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSemYz4EfLNqwnQDe_2TAS5ohNlUKRn1itjYJnvWONjz43wtyg/viewform" target="_blank" rel="noopener">Register your interest</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>HeadsUp4CEOs is part of the <a href="https://www.headsup4hts.co.uk" target="_blank" rel="noopener">HeadsUp4HTs</a> network, run by <a href="https://www.inspireducate.co.uk" target="_blank" rel="noopener">InspirEducate Ltd</a>.</p>
+  <p style="margin-top: 0.5rem;">Questions? Contact <a href="mailto:jamespope@inspireducate.co.uk">jamespope@inspireducate.co.uk</a></p>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('navLinks').classList.remove('open');
+      }
+    });
+  });
+
+  // Sticky nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.15)' : 'none';
+  });
+</script>
+
+</body>
+</html>
